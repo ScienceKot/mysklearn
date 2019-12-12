@@ -13,7 +13,7 @@ class myPCA():
         if self.n_components > np.size(X, 1):
             print("Error | You cand transpose a dataset to a higher dimension")
             return
-
+        print(np.size(X, 1))
         # Getting the correlation matrix
         corr_mat = np.corrcoef(X.T)
 
@@ -30,7 +30,8 @@ class myPCA():
         self.cumulative_variance_ratio = np.cumsum(self.explained_variance_ratio)
 
         # Creating the projection matrix
-        self.matrix_w = np.hstack(tuple(self.eig_pairs[i][1].reshape(np.size(X, 1)) for i in range(self.n_components)))
+        self.matrix_w = np.hstack((self.eig_pairs[i][1].reshape(np.size(X, 1),1) for i in range(self.n_components)))
+        print(self.matrix_w)
 
     def transform(self, X):
         ''' The data transformation to the new dimension space '''
