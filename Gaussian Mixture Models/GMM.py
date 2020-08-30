@@ -1,3 +1,9 @@
+'''
+Created with love by Sigmoid
+
+@Author - Păpăluță Vasile - vpapaluta06@gmail.com
+'''
+
 # Importing the libraries
 import numpy as np
 import pandas as pd
